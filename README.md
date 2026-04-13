@@ -1,5 +1,7 @@
 # Frontend-Backend Integration Framework
 
+> This project demonstrates backend system design concepts including APIs, data processing, and asynchronous workflows.
+
 ## Purpose
 
 This template was created to standardize frontend-backend integration using Flask REST APIs and JavaScript Fetch.
