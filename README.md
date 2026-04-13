@@ -2,15 +2,19 @@
 
 > This project demonstrates backend system design concepts including APIs, data processing, and asynchronous workflows.
 
+## Overview
+
+A reusable Flask + JavaScript template for building frontend-backend integrated apps. Covers CRUD REST APIs, input validation, structured JSON responses, async form submission, and error handling — so projects start with a solid working foundation instead of from scratch.
+
 ## Purpose
 
 This template was created to standardize frontend-backend integration using Flask REST APIs and JavaScript Fetch.
 
-While building the [distributed-task-queue](https://github.com/Madhu0568/distributed-task-queue) and [student-performance-analytics](https://github.com/Madhu0568/student-performance-analytics) projects, I found myself rewriting the same boilerplate every time — input validation, error response formatting, async form submission with no page reload. I extracted all of that into a reusable template so future projects could start with a solid, working foundation instead of from zero.
+While building the [distributed-task-queue](https://github.com/Madhu0568/distributed-task-queue) and [student-analytics-platform](https://github.com/Madhu0568/student-analytics-platform) projects, I found myself rewriting the same boilerplate every time — input validation, error response formatting, async form submission with no page reload. I extracted all of that into a reusable template so future projects could start with a solid, working foundation instead of from zero.
 
 It was reused across multiple projects including:
 - [distributed-task-queue](https://github.com/Madhu0568/distributed-task-queue) — task submission forms and status polling
-- [student-performance-analytics](https://github.com/Madhu0568/student-performance-analytics) — student record forms and async dashboard loading
+- [student-analytics-platform](https://github.com/Madhu0568/student-analytics-platform) — student record forms and async dashboard loading
 
 ## What it includes
 
@@ -27,7 +31,7 @@ It was reused across multiple projects including:
 
 Python · Flask · JavaScript (Fetch API) · HTML5 · CSS3
 
-## Setup
+## How to Run
 
 ```bash
 pip install -r requirements.txt
@@ -105,3 +109,7 @@ curl -X POST http://localhost:5004/api/items/batch \
 4. Swap the frontend for a React or Vue component
 
 This is intentionally minimal — it's a starting point, not a finished product.
+
+## Output
+
+See [sample_output.txt](sample_output.txt) for real API request/response examples including CRUD operations, validation errors, and health check output.
