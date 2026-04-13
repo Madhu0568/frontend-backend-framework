@@ -1,0 +1,91 @@
+==============================================================
+  Frontend-Backend Integration Framework — Sample API Output
+==============================================================
+
+--- Create a record ---
+$ curl -X POST http://localhost:5004/api/items \
+    -H "Content-Type: application/json" \
+    -d '{"name": "Test Item", "description": "A sample item", "category": "demo"}'
+
+Response (201):
+{
+  "id": 1,
+  "name": "Test Item",
+  "description": "A sample item",
+  "category": "demo",
+  "created_at": "2024-01-15T11:00:00.000Z",
+  "message": "Item created successfully"
+}
+
+--- Get all records ---
+$ curl http://localhost:5004/api/items
+
+Response (200):
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Test Item",
+      "description": "A sample item",
+      "category": "demo",
+      "created_at": "2024-01-15T11:00:00.000Z"
+    }
+  ],
+  "total": 1
+}
+
+--- Get a single record ---
+$ curl http://localhost:5004/api/items/1
+
+Response (200):
+{
+  "id": 1,
+  "name": "Test Item",
+  "description": "A sample item",
+  "category": "demo",
+  "created_at": "2024-01-15T11:00:00.000Z"
+}
+
+--- Update a record ---
+$ curl -X PUT http://localhost:5004/api/items/1 \
+    -H "Content-Type: application/json" \
+    -d '{"name": "Updated Item", "description": "Updated description"}'
+
+Response (200):
+{
+  "id": 1,
+  "name": "Updated Item",
+  "description": "Updated description",
+  "category": "demo",
+  "message": "Item updated successfully"
+}
+
+--- Validation error example ---
+$ curl -X POST http://localhost:5004/api/items \
+    -H "Content-Type: application/json" \
+    -d '{"description": "Missing name field"}'
+
+Response (400):
+{
+  "error": "Validation failed",
+  "missing_fields": ["name"],
+  "message": "name is required"
+}
+
+--- Delete a record ---
+$ curl -X DELETE http://localhost:5004/api/items/1
+
+Response (200):
+{
+  "message": "Item deleted successfully",
+  "id": 1
+}
+
+--- Health check ---
+$ curl http://localhost:5004/api/health
+
+Response (200):
+{
+  "status": "ok",
+  "uptime_seconds": 132
+}
